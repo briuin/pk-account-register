@@ -11,6 +11,7 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "pkAccountRegister",
+    publicPath: 'auto'
   },
   optimization: {
     runtimeChunk: false
