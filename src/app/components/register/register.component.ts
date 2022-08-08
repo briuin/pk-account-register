@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ConfirmedValidator } from './confirmed.validator';
 import { HttpClient } from '@angular/common/http';
 
@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup | any;
-  constructor(private router: Router, private httpClient: HttpClient) {
+  constructor(private router: Router, private httpClient: HttpClient, private route: ActivatedRoute) {
     this.registerForm = new FormGroup(
       {
         username: new FormControl('', [
@@ -48,7 +48,11 @@ export class RegisterComponent implements OnInit {
         password: this.registerForm.getRawValue().password
       })
       .subscribe((x: any) => {
-        this.router.navigate(['/account/login']);
+
       });
+  }
+
+  redirectToLogin() {
+    this.router.navigate(['/account/login'], {relativeTo: this.route});
   }
 }
