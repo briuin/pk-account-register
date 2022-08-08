@@ -53,6 +53,6 @@ export class RegisterComponent implements OnInit {
   }
 
   redirectToLogin() {
-    this.router.navigate(['login'], {relativeTo: this.route});
+    this.router.navigate(['login'], {relativeTo: this.route.parent});
   }
 }
