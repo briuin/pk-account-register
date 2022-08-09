@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,7 +13,8 @@ import { RegisterModule } from './components/register/register.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RegisterModule
+    RegisterModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
